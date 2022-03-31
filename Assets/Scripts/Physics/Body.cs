@@ -9,7 +9,8 @@ public class Body : MonoBehaviour
     public Vector2 acceleration { get; set; } = Vector2.zero;
     public float mass { get; set; } = 1;
 
-    public void ApplyForce(Vector2 force) {
+    public void ApplyForce(Vector2 force)
+    {
         acceleration = force;
     }
 }

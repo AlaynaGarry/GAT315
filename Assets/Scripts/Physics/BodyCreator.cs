@@ -7,13 +7,14 @@ public class BodyCreator : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] Body bodyPrefab;
 
-	bool action = false;
-	bool pressed = false;
-	float timer = 0;
+    bool action = false;
+    bool pressed = false;
+    float timer = 0;
 
     void Update()
     {
-        if (action) {
+        if (action)
+        {
             Vector3 position = Simulator.Instance.GetScreenToWorldPosition(Input.mousePosition);
             Body body = Instantiate(bodyPrefab, position, Quaternion.identity);
             body.ApplyForce(Random.insideUnitCircle.normalized);
@@ -36,5 +37,5 @@ public class BodyCreator : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         action = false;
-    }    
+    }
 }
